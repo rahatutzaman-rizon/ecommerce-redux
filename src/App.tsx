@@ -1,7 +1,6 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import Header from "./components/Header";
-import ProductListPage from "./pages/ProductListPage";
-import CartPage from "./pages/CartPage";
+import AppRouter from "./Router";
 import { CartProvider } from "./context/CartContext";
 
 const App: React.FC = () => {
@@ -9,10 +8,7 @@ const App: React.FC = () => {
     <CartProvider>
       <Router>
         <Header />
-        <Routes>
-          <Route path="/" element={<ProductListPage />} />
-          <Route path="/cart" element={<CartPage />} />
-        </Routes>
+        <AppRouter />
       </Router>
     </CartProvider>
   );
